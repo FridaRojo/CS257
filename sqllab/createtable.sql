@@ -9,5 +9,5 @@ CREATE TABLE earthquakes (
   magError real,
   locationSource text,
   mageSource text,
-  place text,
+  place text
 );
