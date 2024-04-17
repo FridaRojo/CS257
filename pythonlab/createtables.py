@@ -37,7 +37,7 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql_city = "DROP TABLE IF EXISTS cities;
+    sql_city = """DROP TABLE IF EXISTS cities;
 CREATE TABLE cities (
   city text,
   state text,
@@ -45,14 +45,14 @@ CREATE TABLE cities (
   lat real,
   long real
 );
-"
-    sql_states =  "DROP TABLE IF EXISTS states;
+"""
+    sql_states =  """DROP TABLE IF EXISTS states;
 CREATE TABLE states (
   code text,
   stateName text,
   pop real
 );
-"
+"""
     
     cur.execute( sql_city )
     cur.execute( sql_states )
