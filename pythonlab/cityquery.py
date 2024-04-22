@@ -12,7 +12,7 @@ def querys():
     print( "Connection Worked!" )
   else:
     print( "Problem with Connection" )
-    return None 
+    #return None 
 
   cursor = conn.cursor()
 
@@ -26,7 +26,7 @@ def querys():
 
    #Printing out the name of the city with the largest population
     cursor.execute("SELECT city FROM cities ORDER BY pop DESC LIMIT 1;")
-    largest_pop_city = cursor.fetchone()
+    largest_pop_city = cursor.fetchone()[0]
     print("City with largest population:", largest_pop_city)
 
     
