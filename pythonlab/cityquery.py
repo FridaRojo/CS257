@@ -12,8 +12,7 @@ def querys():
     print( "Connection Worked!" )
   else:
     print( "Problem with Connection" )
-
-  return None 
+    return None 
 
   cursor = conn.cursor()
 
