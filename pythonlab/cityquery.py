@@ -1,7 +1,7 @@
 import psycopg2
 
 def querys():
-  """conn = psycopg2.connect(
+  conn = psycopg2.connect(
     host="localhost",
     port=5432,   
     database="rojof",
@@ -14,7 +14,7 @@ def querys():
     print( "Problem with Connection" )
     return None 
 
-  cursor = conn.cursor()"""
+  cursor = conn.cursor()
 
   # Determining if Northfield is present in the database
   cursor.execute("SELECT city, state, lat, long FROM cities WHERE city = 'Northfield';")
