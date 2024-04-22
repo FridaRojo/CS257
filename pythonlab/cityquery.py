@@ -14,7 +14,6 @@ def querys():
     print( "Problem with Connection" )
 
   return None 
-  )
 
   cursor = conn.cursor()
 
