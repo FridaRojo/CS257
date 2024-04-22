@@ -1,7 +1,7 @@
 import psycopg2
 
 def querys():
-  conn = psycopg2.connect(
+  """conn = psycopg2.connect(
     host="localhost",
     port=5432,   
     database="rojof",
@@ -14,7 +14,7 @@ def querys():
     print( "Problem with Connection" )
     return None 
 
-  cursor = conn.cursor()
+  cursor = conn.cursor()"""
 
   # Determining if Northfield is present in the database
   cursor.execute("SELECT city, state, lat, long FROM cities WHERE city = 'Northfield';")
@@ -23,6 +23,13 @@ def querys():
     print("Northfield is present in the database. Location (Latitude, Longitude):", northfield_result[2], northfield_result[3])
   else:
     print("Northfield is not present in the database.")
+
+   #Printing out the name of the city with the largest population
+    cursor.execute("SELECT city FROM cities ORDER BY pop DESC LIMIT 1;")
+    largest_pop_city = cursor.fetchone()
+    print("City with largest population:", largest_pop_city)
+
+    
 
 
 print(querys())
