@@ -23,6 +23,9 @@ def querys():
     print("Northfield is present in the database. Location (Latitude, Longitude):", northfield_result[2], northfield_result[3])
   else:
     print("Northfield is not present in the database.")
+
+
+print(querys)
       
 
 
