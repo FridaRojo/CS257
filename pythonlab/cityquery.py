@@ -66,11 +66,11 @@ def queries():
       total_pop = cursor.fetchone()
    
       if total_pop[0]:
-        print(state,"'s total population: ", total_pop)
+        print(state_input,"'s total population: ", total_pop)
       else:
         print("No cities for ", full_name)
     else:
-      print(state, " is not in the database.")
+      print(state_input, " is not in the database.")
 
 
 
