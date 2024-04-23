@@ -63,7 +63,7 @@ def queries():
     if state_row:
       full_name = state_row[0]
       cursor.execute("SELECT SUM(c.pop) AS total_population FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE s.state ILIKE %s;", (full_name,)) 
-      total_pop = cursor.fetchone()
+      total_pop = cursor.fetchone()[0]
    
       if total_pop[0]:
         print(state_input,"'s total population: ", total_pop)
@@ -72,15 +72,4 @@ def queries():
     else:
       print(state_input, " is not in the database.")
 
-
-
-    
 queries()
-
-      
-
-
-
-
-
-
