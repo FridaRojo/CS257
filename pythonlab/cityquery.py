@@ -62,7 +62,7 @@ def queries():
 
     if state_row:
       full_name = state_row[0]
-      cursor.execute("SELECT SUM(c.pop) AS total_population FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE s.state ILIKE %s;", (full_state_name,)) 
+      cursor.execute("SELECT SUM(c.pop) AS total_population FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE s.state ILIKE %s;", (full_name,)) 
       total_pop = cursor.fetchone()
    
       if total_pop[0]:
