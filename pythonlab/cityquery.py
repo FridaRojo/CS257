@@ -62,7 +62,7 @@ def queries():
     FROM cities c
     JOIN states s ON c.state = s.code OR c.state = s.state
     WHERE lower(s.state) = lower(%s);"""
-     cursor.execute(state_query, (state,))
+    cursor.execute(state_query, (state,))
 
     cursor.execute("SELECT state FROM states WHERE code ILIKE %s OR state ILIKE %s;", (state_input, state_input))
     state_row = cursor.fetchone()
