@@ -49,11 +49,11 @@ def querys():
     furthest_s = cursor.fetchone()[0]
     print("City furthest South: ", furthest_s)
       #furthest W
-    cursor.execute("SELECT city FROM cities ORDER BY long LIMIT ")
+    cursor.execute("SELECT city FROM cities ORDER BY long DESC LIMIT 1;")
     furthest_w = cursor.fetchone()[0]
     print("City furthest West: ", furthest_w)
       #furthest E
-    cursor.execute("SELECT city FROM cities ORDER BY long DESC LIMIT ")
+    cursor.execute("SELECT city FROM cities ORDER BY long LIMIT 1;")
     furthest_w = cursor.fetchone()[0]
     print("City furthest East: ", furthest_w)
 
