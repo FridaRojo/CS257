@@ -32,7 +32,7 @@ def querys():
     print("City with largest population:", largest_pop_city)
 
     #Printing out name of Minnesota city with the smallest pop
-    cursor.execute("SELECT city FROM cities WHERE state = 'Minnesota' BY pop DESC LIMIT 1;")
+    cursor.execute("SELECT city FROM cities WHERE state = 'Minnesota' ORDER BY pop DESC LIMIT 1;")
     smallest_pop_city_mn = cursor.fetchone()[0]
     print("Minnesota city with the smallest population:", smallest_pop_city_mn)
 
