@@ -56,16 +56,26 @@ def queries():
     print()
 
     #Entering state/abb from keyboard
-    state = input("Enter a state/state abbreviation: ")
+    state_input = input("Enter a state/state abbreviation: ")
     state_query = """
     SELECT SUM(c.pop) AS total_population
     FROM cities c
     JOIN states s ON c.state = s.code OR c.state = s.state
     WHERE lower(s.state) = lower(%s);"""
-    cursor.execute(state_query, (state,))
-    total_pop = cursor.fetchone()[0]
-    if total_pop:
-      print(state,"'s total population: ", total_pop)
+     cursor.execute(state_query, (state,))
+
+    cursor.execute("SELECT state FROM states WHERE code ILIKE %s OR state ILIKE %s;", (state_input, state_input))
+    state_row = cursor.fetchone()
+
+    if state_row:
+      full_name = state_row[0]
+      cursor.execute("SELECT SUM(c.pop) AS total_population FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE s.state ILIKE %s;", (full_state_name,)) 
+      total_pop = cursor.fetchone()
+   
+      if total_pop[0]:
+        print(state,"'s total population: ", total_pop)
+      else:
+        print("No cities for ", full_name)
     else:
       print(state, " is not in the database.")
 
