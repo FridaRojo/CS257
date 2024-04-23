@@ -1,6 +1,6 @@
 import psycopg2
 
-def querys():
+def queries():
   conn = psycopg2.connect(
     host="localhost",
     port=5432,   
@@ -12,8 +12,8 @@ def querys():
     print( "Connection Worked!" )
   else:
     print( "Problem with Connection" )
-    #return None 
-
+  print()
+  
   cursor = conn.cursor()
 
   # Determining if Northfield is present in the database
@@ -23,9 +23,8 @@ def querys():
     print("Northfield is present in the database. Location (Latitude, Longitude):", northfield_result[2], northfield_result[3])
   else:
     print("Northfield is not present in the database.")
-
     print()
-
+    
    #Printing out the name of the city with the largest population
     cursor.execute("SELECT city FROM cities ORDER BY pop DESC LIMIT 1;")
     largest_pop_city = cursor.fetchone()[0]
@@ -35,9 +34,7 @@ def querys():
     cursor.execute("SELECT city FROM cities WHERE state = 'Minnesota' ORDER BY pop LIMIT 1;")
     smallest_pop_city_mn = cursor.fetchone()[0]
     print("Minnesota city with the smallest population:", smallest_pop_city_mn)
-
     print()
-
 
     #Printing out the cities furthest N, S, W, E
       #furthest N
@@ -56,10 +53,21 @@ def querys():
     cursor.execute("SELECT city FROM cities ORDER BY long LIMIT 1;")
     furthest_w = cursor.fetchone()[0]
     print("City furthest East: ", furthest_w)
-    
+    print()
 
-# print(querys())
-querys()
+    #Entering state from keyboards
+    state = input("Enter a state/state abbreviation: ")
+    cursor.execute("SELECT SUM(c.pop) AS total_pop FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE lower(s.state) = lower(%s)")
+    total_pop = cursor.fetchone()
+    if total_pop:
+      print(state, "'s total population: ", total_pop)
+    else:
+      print(state, " is not in the database.")
+
+
+
+    
+queries()
 
       
 
