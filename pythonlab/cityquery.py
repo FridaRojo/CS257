@@ -57,7 +57,7 @@ def queries():
 
     #Entering state/abb from keyboard
     state = input("Enter a state/state abbreviation: ")
-    state_query = "SELECT SUM(c.pop) AS total_pop FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE lower(s.state) = lower(%s)"
+    state_query = "SELECT SUM(c.pop) AS total_pop FROM cities c JOIN states s ON c.state = s.code OR c.state = s.state WHERE s.state = %s"
     cursor.execute(state_query, (state,))
     total_pop = cursor.fetchone()[0]
     if total_pop:
