@@ -18,7 +18,7 @@ CREATE TABLE statesAbb (
 );
 """
 
-    cur.execute( sql_states )
+    cur.execute( sql_statesAbb )
 
     row = cur.fetchone()
 
