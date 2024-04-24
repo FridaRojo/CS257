@@ -10,7 +10,7 @@ def createAbb():
 
     cur = conn.cursor()
 
-    sql_states =  """DROP TABLE IF EXISTS statesAbb;
+    sql_statesAbb =  """DROP TABLE IF EXISTS statesAbb;
 CREATE TABLE statesAbb (
   code text,
   stateName text,
