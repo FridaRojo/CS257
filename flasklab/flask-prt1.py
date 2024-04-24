@@ -19,10 +19,10 @@ def state_pop(abbrev):
       user="rojof",
       password="spoon387ardi")
   
-    cur = conn.cursor()
-    cur.execute("SELECT pop FROM states WHERE code ILIKE %s", (abbrev, abbrev))
-    pop = cur.fetchone()
-    return abbrev + "'s population is " + str(pop)
+  cur = conn.cursor()
+  cur.execute("SELECT pop FROM states WHERE code ILIKE %s", (abbrev, abbrev))
+  pop = cur.fetchone()
+  return abbrev + "'s population is " + str(pop)
 
 if __name__ == '__main__':
     my_port = 5225
