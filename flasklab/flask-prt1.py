@@ -12,12 +12,12 @@ def my_adding(num1,num2):
 
 @app.route('/pop/<abbrev>')
 def state_pop(abbrev):
-   conn = psycopg2.connect(
-      host="localhost",
-      port=5432,   
-      database="rojof",
-      user="rojof",
-      password="spoon387ardi")
+  conn = psycopg2.connect(
+    host="localhost",
+    port=5432,   
+    database="rojof",
+    user="rojof",
+    password="spoon387ardi")
   
   cur = conn.cursor()
   cur.execute("SELECT pop FROM states WHERE code ILIKE %s", (abbrev, abbrev))
