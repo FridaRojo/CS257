@@ -20,7 +20,7 @@ def state_pop(abbrev):
     password="spoon387ardi")
   
   cur = conn.cursor()
-  cur.execute("SELECT pop FROM states WHERE code ILIKE %s", (abbrev, abbrev))
+  cur.execute("SELECT pop FROM states WHERE code = " + abbrev)
   pop = cur.fetchone()
   return abbrev + "'s population is " + str(pop)
 
