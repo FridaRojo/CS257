@@ -21,7 +21,7 @@ def state_pop(abbrev):
   
   cur = conn.cursor()
   cur.execute("SELECT pop FROM states WHERE abbrev = %s;", (abbrev,))
-  pop = cur.fetchone()
+  pop = cur.fetchone()[0]
   return abbrev + "'s population is " + str(pop)
 
 if __name__ == '__main__':
