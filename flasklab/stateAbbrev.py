@@ -1,6 +1,6 @@
 import psycopg2
   
-def test_query_one():
+def createAbb():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,   
@@ -25,3 +25,4 @@ CREATE TABLE states (
     conn.commit()
     
     return row
+createAbb()
