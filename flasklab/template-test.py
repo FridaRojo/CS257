@@ -4,6 +4,8 @@ import random
 
 app = Flask(__name__)
 
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
 @app.route('/')
 def welcome():
     html_file_path = os.path.join(current_directory, 'index.html')
