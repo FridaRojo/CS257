@@ -10,8 +10,8 @@ current_directory = os.path.dirname(os.path.abspath(__file__))
 @app.route('/')
 def welcome():
     html_file_path = os.path.join(current_directory, 'index.html')
-    return render_template(html_file_path)
-    #return render_template("index.html")
+    #return render_template(html_file_path)
+    return render_template("index.html")
 
 @app.route('/rand/<low>/<high>')
 def rand(low, high):
@@ -22,9 +22,9 @@ def rand(low, high):
     
     num = random.randint(low_int, high_int)
     
-    html_file_path = os.path.join(current_directory, 'random.html')
-    return render_template(html_file_path, randNum=num)
-    #return render_template("random.html", randNum = num)
+    #html_file_path = os.path.join(current_directory, 'random.html')
+    #return render_template(html_file_path, randNum=num)
+    return render_template("random.html", randNum = num)
 
 if __name__ == '__main__':
     my_port = 5225
