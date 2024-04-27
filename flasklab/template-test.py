@@ -30,5 +30,5 @@ def rand(low, high):
     return render_template("random.html", randNum = num)
 
 if __name__ == '__main__':
-    my_port = 5225
+    my_port = 5125
     app.run(host='0.0.0.0', port = my_port) 
