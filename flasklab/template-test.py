@@ -3,7 +3,10 @@ from flask import render_template
 import random
 import os 
 
-app = Flask(__name__)
+#app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.dirname(os.path.abspath(__file__)))
+
+@app.route('/')
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
