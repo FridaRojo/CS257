@@ -6,13 +6,13 @@ import os
 #app = Flask(__name__)
 app = Flask(__name__, template_folder=os.path.dirname(os.path.abspath(__file__)))
 
-@app.route('/')
+#@app.route('/')
 
-current_directory = os.path.dirname(os.path.abspath(__file__))
+#current_directory = os.path.dirname(os.path.abspath(__file__))
 
 @app.route('/')
 def welcome():
-    html_file_path = os.path.join(current_directory, 'index.html')
+    #html_file_path = os.path.join(current_directory, 'index.html')
     #return render_template(html_file_path)
     return render_template("index.html")
 
