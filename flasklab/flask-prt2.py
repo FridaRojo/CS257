@@ -35,8 +35,8 @@ def city():
 def welcome():
   return render_template("start.html")
 
-@app.route('/sentance')
-def sentance():
+@app.route('/sentence')
+def sentence():
   name = random.choice(names)
   adjective = random.choice(adjectives)
   year = random.randint(1900,2024)
