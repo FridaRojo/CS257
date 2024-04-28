@@ -40,9 +40,8 @@ def sentence():
   name = random.choice(names)
   adjective = random.choice(adjectives)
   year = random.randint(1900,2024)
-  city = city()
   
-  sentence = f"{name} the {adjective} was born in {city} in {year}"  
+  sentence = f"{name} the {adjective} was born in {city()} in {year}"  
   return render_template('sentence.html', sentence=sentence)
   #return render_template("name.html"," the" , "adj.html", "was born in " year)
 
