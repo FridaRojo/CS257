@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-  message =  "hello and welcome"
-
+  message =  "Match is a fun game where we try and get all the same numbers in the same color!"
+  return render_template("home.html", text = message)
 
 if __name__ == '__main__':
     my_port = 5225
