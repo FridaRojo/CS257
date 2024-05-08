@@ -1,6 +1,12 @@
-.my-class{
+.head-class{
   text-align: center;
-  color: black;
+  color: blue;
   text-decoration-line: underline;
   text-decoration-style: wavy;
+}
+
+.rule-class{
+  text-align: center;
+  background-color:blue;
+  color: white;
 }
