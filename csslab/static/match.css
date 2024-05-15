@@ -3,7 +3,10 @@
   text-decoration-line: underline;
   text-decoration-style: wavy;
 }
-
+.head-class{
+ text-align: center;
+ color: blue;
+}
 .goal-class{
   text-align: center;
   background-color:blue;
