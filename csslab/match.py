@@ -11,7 +11,7 @@ def welcome():
   
 @app.route('/newpage')
 def match():
-  return renter_template("match.html")
+  return render_template("match.html")
 
 if __name__ == '__main__':
     my_port = 5225
