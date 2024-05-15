@@ -9,7 +9,7 @@ def welcome():
   message = message + "Lets start!"
   return render_template("home.html", text = message)
   
-@app.route('/newpage')
+@app.route('/match')
 def match():
   return render_template("match.html")
 
