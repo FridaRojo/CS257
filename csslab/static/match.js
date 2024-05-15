@@ -44,5 +44,5 @@ function generateNewBottomNum(){
 }
 
 function start(){
-	location.href="/newpage";
+	location.href="/match";
 }
