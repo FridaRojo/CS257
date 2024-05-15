@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
   message =  "Match is a fun game where we try and get all the same numbers in the same color!"
+  message = meassage + "Lets start!"
   return render_template("home.html", text = message)
   
 @app.route('/newpage')
